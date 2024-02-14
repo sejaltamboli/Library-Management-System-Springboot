@@ -32,4 +32,10 @@ public class LibraryMemberController {
     public LibraryMemberEntity updateMemberById(@PathVariable ("id") int id, @RequestBody LibraryMemberEntity libraryMemberEntity) {
         return iMemberService.updateMemberById(id, libraryMemberEntity);
     }
+
+    @GetMapping("/deletememberbyid/{id}")
+    public String deleteMemberById(@PathVariable ("id") int id) {
+        return iMemberService.deleteMemberById(id);
+
+    }
 }

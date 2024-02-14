@@ -31,4 +31,11 @@ public class MemberService implements IMemberService{
         BeanUtils.copyProperties(libraryMemberEntity, libraryMemberEntityNew);
         return iMemberRepo.save(libraryMemberEntityNew);
     }
+
+    @Override
+    public String deleteMemberById(int id) {
+        LibraryMemberEntity libraryMemberEntity = iMemberRepo.findById(id).get();
+        iMemberRepo.delete(libraryMemberEntity);
+        return "Item Deleted Successfully";
+    }
 }

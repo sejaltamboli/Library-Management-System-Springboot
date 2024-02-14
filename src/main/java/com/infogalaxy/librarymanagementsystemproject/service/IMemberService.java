@@ -9,4 +9,6 @@ public interface IMemberService {
     public LibraryMemberEntity retrieveMemberById(int id);
 
     public LibraryMemberEntity updateMemberById(int id, LibraryMemberEntity libraryMemberEntity);
+
+    public String deleteMemberById(int id);
 }
