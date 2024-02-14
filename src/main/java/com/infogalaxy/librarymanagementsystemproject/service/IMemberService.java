@@ -7,4 +7,6 @@ public interface IMemberService {
     public LibraryMemberEntity createMember(LibraryMemberEntity libraryMemberEntity);
 
     public LibraryMemberEntity retrieveMemberById(int id);
+
+    public LibraryMemberEntity updateMemberById(int id, LibraryMemberEntity libraryMemberEntity);
 }

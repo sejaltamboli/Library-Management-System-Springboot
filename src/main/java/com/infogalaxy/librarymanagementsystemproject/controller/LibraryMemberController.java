@@ -27,4 +27,9 @@ public class LibraryMemberController {
     public LibraryMemberEntity retrieveMemberById(@PathVariable ("id") int id) {
         return iMemberService.retrieveMemberById(id);
     }
+
+    @PutMapping("/updatememberbyid/{id}")
+    public LibraryMemberEntity updateMemberById(@PathVariable ("id") int id, @RequestBody LibraryMemberEntity libraryMemberEntity) {
+        return iMemberService.updateMemberById(id, libraryMemberEntity);
+    }
 }
