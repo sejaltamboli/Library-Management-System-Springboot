@@ -22,4 +22,9 @@ public class LibraryMemberController {
     public LibraryMemberEntity createMember(@RequestBody LibraryMemberEntity libraryMemberEntity){
         return iMemberService.createMember(libraryMemberEntity);
     }
+
+    @GetMapping("/retrievememberbyid/{id}")
+    public LibraryMemberEntity retrieveMemberById(@PathVariable ("id") int id) {
+        return iMemberService.retrieveMemberById(id);
+    }
 }
