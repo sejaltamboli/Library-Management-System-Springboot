@@ -29,16 +29,16 @@ public class LibraryMemberController {
         return new ResponseEntity<>(new MemberResponses("New Member Created Successfully...", HttpStatus.CREATED,iMemberService.createMember(libraryMemberEntity)), HttpStatus.CREATED);
     }
 
-    @GetMapping("/retrieveallmembers")
-    public ResponseEntity<?> retrieveAllMembers(){
-        return new ResponseEntity<>(new MemberResponses("All Member Data Found Successfully..",HttpStatus.FOUND,iMemberService.retrieveAllMembers()), HttpStatus.FOUND);
-        //return iMemberService.retrieveAllMembers();
-    }
-
-    @GetMapping("/retrievememberbyid/{id}")
-    public LibraryMemberEntity retrieveMemberById(@PathVariable ("id") int id) {
-        return iMemberService.retrieveMemberById(id);
-    }
+//    @GetMapping("/retrieveallmembers")
+//    public ResponseEntity<?> retrieveAllMembers(){
+//        return new ResponseEntity<>(new MemberResponses("All Member Data Found Successfully..",HttpStatus.FOUND,iMemberService.retrieveAllMembers()), HttpStatus.FOUND);
+//        //return iMemberService.retrieveAllMembers();
+//    }
+//
+//    @GetMapping("/retrievememberbyid/{id}")
+//    public ResponseEntity<?> retrieveMemberById(@PathVariable ("id") int id) {
+//        return new ResponseEntity<>(new MemberResponses("Member Data Found By ID",HttpStatus.FOUND,iMemberService.retrieveMemberById(id)),HttpStatus.FOUND);
+//    }
 
     @PutMapping("/updatememberbyid/{id}")
     public LibraryMemberEntity updateMemberById(@PathVariable ("id") int id, @RequestBody LibraryMemberEntity libraryMemberEntity) {
