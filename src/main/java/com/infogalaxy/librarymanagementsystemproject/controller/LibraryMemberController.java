@@ -2,9 +2,15 @@ package com.infogalaxy.librarymanagementsystemproject.controller;
 
 
 import com.infogalaxy.librarymanagementsystemproject.entity.LibraryMemberEntity;
+import com.infogalaxy.librarymanagementsystemproject.responses.MemberResponses;
 import com.infogalaxy.librarymanagementsystemproject.service.IMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/member/api")
@@ -19,8 +25,14 @@ public class LibraryMemberController {
     }
 
     @PostMapping("/createmember")
-    public LibraryMemberEntity createMember(@RequestBody LibraryMemberEntity libraryMemberEntity){
-        return iMemberService.createMember(libraryMemberEntity);
+    public ResponseEntity<?> createMember(@RequestBody LibraryMemberEntity libraryMemberEntity){
+        return new ResponseEntity<>(new MemberResponses("New Member Created Successfully...", HttpStatus.CREATED,iMemberService.createMember(libraryMemberEntity)), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/retrieveallmembers")
+    public ResponseEntity<?> retrieveAllMembers(){
+        return new ResponseEntity<>(new MemberResponses("All Member Data Found Successfully..",HttpStatus.FOUND,iMemberService.retrieveAllMembers()), HttpStatus.FOUND);
+        //return iMemberService.retrieveAllMembers();
     }
 
     @GetMapping("/retrievememberbyid/{id}")
@@ -33,7 +45,7 @@ public class LibraryMemberController {
         return iMemberService.updateMemberById(id, libraryMemberEntity);
     }
 
-    @GetMapping("/deletememberbyid/{id}")
+    @DeleteMapping ("/deletememberbyid/{id}")
     public String deleteMemberById(@PathVariable ("id") int id) {
         return iMemberService.deleteMemberById(id);
 

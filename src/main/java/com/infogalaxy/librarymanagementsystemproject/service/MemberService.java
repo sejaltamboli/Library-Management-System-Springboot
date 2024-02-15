@@ -8,6 +8,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MemberService implements IMemberService{
 
@@ -18,6 +20,11 @@ public class MemberService implements IMemberService{
     public LibraryMemberEntity createMember(LibraryMemberEntity libraryMemberEntity) {
         iMemberRepo.save(libraryMemberEntity);
         return libraryMemberEntity;
+    }
+
+    @Override
+    public List<LibraryMemberEntity> retrieveAllMembers() {
+        return iMemberRepo.findAll();
     }
 
     @Override
