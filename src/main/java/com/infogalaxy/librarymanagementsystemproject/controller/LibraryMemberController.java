@@ -33,11 +33,11 @@ public class LibraryMemberController {
     public ResponseEntity<?> retrieveAllMembers(){
         return new ResponseEntity<>(new MemberResponses("All Member Data Found Successfully..",HttpStatus.FOUND,iMemberService.retrieveAllMembers()), HttpStatus.FOUND);
     }
-//
-//    @GetMapping("/retrievememberbyid/{id}")
-//    public ResponseEntity<?> retrieveMemberById(@PathVariable ("id") int id) {
-//        return new ResponseEntity<>(new MemberResponses("Member Data Found By ID",HttpStatus.FOUND,iMemberService.retrieveMemberById(id)),HttpStatus.FOUND);
-//    }
+
+    @GetMapping("/retrievememberbyid/{id}")
+    public ResponseEntity<?> retrieveMemberById(@PathVariable ("id") int id) {
+        return new ResponseEntity<>(new MemberResponses("Member Data Found By ID",HttpStatus.FOUND,iMemberService.retrieveMemberById(id)),HttpStatus.FOUND);
+    }
 
     @PutMapping("/updatememberbyid/{id}")
     public LibraryMemberEntity updateMemberById(@PathVariable ("id") int id, @RequestBody LibraryMemberEntity libraryMemberEntity) {
