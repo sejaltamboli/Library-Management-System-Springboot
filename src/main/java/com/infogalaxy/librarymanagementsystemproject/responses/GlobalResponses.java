@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.http.HttpStatus;
 
 @Data
-public class MemberResponses {
+public class GlobalResponses {
 
     private String message;
 
@@ -12,20 +12,20 @@ public class MemberResponses {
 
     private Object object;
 
-    public MemberResponses(){
+    public GlobalResponses(){
 
     }
 
-    public MemberResponses(String message){
+    public GlobalResponses(String message){
         this.message = message;
     }
 
-    public MemberResponses(String message, HttpStatus code){
+    public GlobalResponses(String message, HttpStatus code){
         this.message = message;
         this.code = code;
     }
 
-    public MemberResponses(String message, HttpStatus code, Object object){
+    public GlobalResponses(String message, HttpStatus code, Object object){
         this.message = message;
         this.code = code;
         this.object = object;

@@ -14,5 +14,4 @@ public class AuthorController {
         return "Welcome to Author API";
     }
 
-
 }
