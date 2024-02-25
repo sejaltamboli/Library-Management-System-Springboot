@@ -9,4 +9,6 @@ public interface IAuthorService {
     public AuthorEntity createAuthor(AuthorEntity authorEntity);
 
     public List<AuthorEntity> retrieveAllAuthor();
+
+    public AuthorEntity retrieveAuthorById(int id);
 }

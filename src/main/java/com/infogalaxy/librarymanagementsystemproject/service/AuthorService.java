@@ -24,4 +24,10 @@ public class AuthorService implements IAuthorService{
     public List<AuthorEntity> retrieveAllAuthor() {
         return iAuthorRepo.findAll();
     }
+
+    @Override
+    public AuthorEntity retrieveAuthorById(int id) {
+        AuthorEntity authorEntity = iAuthorRepo.findById(id).get() ;
+        return iAuthorRepo.findById(id).get();
+    }
 }
