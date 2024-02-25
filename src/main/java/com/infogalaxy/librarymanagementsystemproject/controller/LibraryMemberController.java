@@ -36,10 +36,10 @@ public class LibraryMemberController {
         return new ResponseEntity<>(new GlobalResponses("Member Data Found By ID",HttpStatus.FOUND,iMemberService.retrieveMemberById(id)),HttpStatus.FOUND);
     }
 
-//    @PutMapping("/updatememberbyid/{id}")
-//    public ResponseEntity<?> updateMemberById(@PathVariable ("id") int id, @RequestBody LibraryMemberEntity libraryMemberEntity) {
-//        return new ResponseEntity<>(new MemberResponses("Member Data Updated Successfully",HttpStatus.PROCESSING,iMemberService.updateMemberById(id,libraryMemberEntity)), HttpStatus.PROCESSING);
-//    }
+    @PutMapping("/updatememberbyid/{id}")
+    public ResponseEntity<?> updateMemberById(@PathVariable ("id") int id, @RequestBody LibraryMemberEntity libraryMemberEntity) {
+        return new ResponseEntity<>(new GlobalResponses("Member Data Updated Successfully",HttpStatus.PROCESSING,iMemberService.updateMemberById(id,libraryMemberEntity)), HttpStatus.PROCESSING);
+    }
 
     @DeleteMapping ("/deletememberbyid/{id}")
     public ResponseEntity<?> deleteMemberById(@PathVariable ("id") int id) {

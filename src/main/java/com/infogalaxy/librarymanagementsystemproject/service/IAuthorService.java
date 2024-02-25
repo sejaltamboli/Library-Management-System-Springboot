@@ -4,5 +4,5 @@ import com.infogalaxy.librarymanagementsystemproject.entity.AuthorEntity;
 
 public interface IAuthorService {
 
-//    public AuthorEntity createAuthor(AuthorEntity authorEntity);
+    public AuthorEntity createAuthor(AuthorEntity authorEntity);
 }
