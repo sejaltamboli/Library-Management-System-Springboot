@@ -5,6 +5,8 @@ import com.infogalaxy.librarymanagementsystemproject.repo.IAuthorRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AuthorService implements IAuthorService{
 
@@ -16,5 +18,10 @@ public class AuthorService implements IAuthorService{
     public AuthorEntity createAuthor(AuthorEntity authorEntity) {
         iAuthorRepo.save(authorEntity);
         return authorEntity;
+    }
+
+    @Override
+    public List<AuthorEntity> retrieveAllAuthor() {
+        return iAuthorRepo.findAll();
     }
 }
