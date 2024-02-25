@@ -24,7 +24,10 @@ public class AuthorController {
     @PostMapping("/createauthor")
     public ResponseEntity<?> createAuthor(@RequestBody AuthorEntity authorEntity){
         return new ResponseEntity<>(new GlobalResponses("New Author Created Successfully...", HttpStatus.CREATED,iAuthorService.createAuthor(authorEntity)), HttpStatus.CREATED);
-
     }
 
+    @GetMapping("/retrieveallauthor")
+    public ResponseEntity<?> retrieveAllAuthor(){
+        return new ResponseEntity<>(new GlobalResponses("All Author Data Found Successfully..", HttpStatus.FOUND, iAuthorService.retrieveAllAuthor()), HttpStatus.FOUND);
+    }
 }
