@@ -21,10 +21,10 @@ public class AuthorController {
         return "Welcome to Author API";
     }
 
-//    @PostMapping("/createauthor")
-//    public ResponseEntity<?> createAuthor(@RequestBody AuthorEntity authorEntity){
-//        return new ResponseEntity<>(new GlobalResponses("New Author Created Successfully...", HttpStatus.CREATED,iAuthorService.createAuthor(authorEntity)), HttpStatus.CREATED);
-//
-//    }
+    @PostMapping("/createauthor")
+    public ResponseEntity<?> createAuthor(@RequestBody AuthorEntity authorEntity){
+        return new ResponseEntity<>(new GlobalResponses("New Author Created Successfully...", HttpStatus.CREATED,iAuthorService.createAuthor(authorEntity)), HttpStatus.CREATED);
+
+    }
 
 }
