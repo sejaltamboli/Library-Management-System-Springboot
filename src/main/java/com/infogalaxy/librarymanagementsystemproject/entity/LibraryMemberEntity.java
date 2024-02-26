@@ -7,6 +7,10 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
+/***
+ * Interacting Library Member Entity Class to the Database with librarymemberentity Table
+ */
+
 @Data
 @Entity
 @Table(name = "librarymemberentity")

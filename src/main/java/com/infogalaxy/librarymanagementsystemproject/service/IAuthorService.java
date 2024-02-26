@@ -5,6 +5,10 @@ import com.infogalaxy.librarymanagementsystemproject.entity.AuthorEntity;
 import java.util.List;
 import java.util.Optional;
 
+/***
+ * IAuthorService Interface is used to Declare the Author Functions
+ */
+
 public interface IAuthorService {
 
     public AuthorEntity createAuthor(AuthorEntity authorEntity);

@@ -6,6 +6,11 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
+
+/***
+ * Interacting Author Entity Class to the Database with authorentity Table
+ */
+
 @Entity
 @Data
 @Table(name = "authorentity")

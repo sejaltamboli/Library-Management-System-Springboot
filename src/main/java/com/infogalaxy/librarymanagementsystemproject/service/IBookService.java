@@ -5,6 +5,10 @@ import com.infogalaxy.librarymanagementsystemproject.entity.BookEntity;
 import java.util.List;
 import java.util.Optional;
 
+/***
+ * IBookService Interface is used to Declare the Book Functions
+ */
+
 public interface IBookService {
 
     public BookEntity createBook(BookEntity bookEntity);

@@ -7,6 +7,10 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
+/***
+ * Interacting Book Entity Class to the Database with bookentity Table
+ */
+
 @Entity
 @Data
 @Table(name = "bookentity")
