@@ -13,4 +13,6 @@ public interface IBookService {
     public BookEntity retrieveBookById(int id);
 
     public BookEntity updateBookById(int id, BookEntity bookEntity);
+
+    public String deleteBookById(int id);
 }

@@ -38,4 +38,11 @@ public class BookService implements IBookService{
         BeanUtils.copyProperties(bookEntity,bookEntityNew);
         return iBookRepo.save(bookEntityNew);
     }
+
+    @Override
+    public String deleteBookById(int id) {
+        BookEntity bookEntity = iBookRepo.findById(id).get();
+        iBookRepo.deleteById(id);
+        return "Book Deleted Successfully...";
+    }
 }
