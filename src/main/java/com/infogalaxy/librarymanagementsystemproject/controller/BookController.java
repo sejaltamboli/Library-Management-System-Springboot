@@ -31,4 +31,9 @@ public class BookController {
     public ResponseEntity<?> retrieveAllBook() {
         return new ResponseEntity<>(new GlobalResponses("All Book Data Found Successfully", HttpStatus.FOUND, iBookService.retrieveAllBook()), HttpStatus.FOUND);
     }
+
+    @GetMapping("/retrievebookbyid/{id}")
+    public ResponseEntity<?> retrieveBookById(@PathVariable ("id") int id) {
+        return new ResponseEntity<>(new GlobalResponses("Book Data Found By Id", HttpStatus.FOUND, iBookService.retrieveBookById(id)), HttpStatus.FOUND);
+    }
 }
