@@ -32,10 +32,10 @@ public class AuthorService implements IAuthorService{
         return iAuthorRepo.findById(id).get();
     }
 
-//    @Override
-//    public AuthorEntity updateAuthorById(int id, AuthorEntity authorEntity) {
-//        AuthorEntity authorEntityNew = iAuthorRepo.findById(id).get();
-//        BeanUtils.copyProperties(authorEntity,authorEntityNew);
-//        return iAuthorRepo.save(authorEntityNew);
-//    }
+    @Override
+    public AuthorEntity updateAuthorById(int id, AuthorEntity authorEntity) {
+        AuthorEntity authorEntityNew = iAuthorRepo.findById(id).get();
+        BeanUtils.copyProperties(authorEntity,authorEntityNew);
+        return iAuthorRepo.save(authorEntityNew);
+    }
 }
