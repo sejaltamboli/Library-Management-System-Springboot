@@ -29,7 +29,8 @@ public class MemberService implements IMemberService{
 
     @Override
     public LibraryMemberEntity retrieveMemberById(int id) {
-        return iMemberRepo.findById(id).get();
+        LibraryMemberEntity libraryMemberEntity = iMemberRepo.findById(id).get();
+        return libraryMemberEntity;
     }
 
     @Override
