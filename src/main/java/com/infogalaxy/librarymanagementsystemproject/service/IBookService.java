@@ -3,6 +3,7 @@ package com.infogalaxy.librarymanagementsystemproject.service;
 import com.infogalaxy.librarymanagementsystemproject.entity.BookEntity;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IBookService {
 
@@ -10,7 +11,7 @@ public interface IBookService {
 
     public List<BookEntity> retrieveAllBook();
 
-    public BookEntity retrieveBookById(int id);
+    public Optional<BookEntity> retrieveBookById(int id);
 
     public BookEntity updateBookById(int id, BookEntity bookEntity);
 
