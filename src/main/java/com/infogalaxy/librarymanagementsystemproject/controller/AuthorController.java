@@ -40,4 +40,9 @@ public class AuthorController {
     public ResponseEntity<?> updateAuthorById(@PathVariable ("id") int id, @RequestBody AuthorEntity authorEntity) {
         return new ResponseEntity<>(new GlobalResponses("Author Data Updated Successfully", HttpStatus.ACCEPTED, iAuthorService.updateAuthorById(id, authorEntity)), HttpStatus.ACCEPTED);
     }
+
+    @DeleteMapping("/deleteauthorbyid/{id}")
+    public ResponseEntity<?> deleteAuthorById(@PathVariable ("id") int id) {
+        return new ResponseEntity<>(new GlobalResponses("Author Data Deleted Successfully", HttpStatus.ACCEPTED, iAuthorService.deleteAuthorById(id)), HttpStatus.ACCEPTED);
+    }
 }
