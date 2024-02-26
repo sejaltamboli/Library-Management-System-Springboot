@@ -11,4 +11,6 @@ public interface IBookService {
     public List<BookEntity> retrieveAllBook();
 
     public BookEntity retrieveBookById(int id);
+
+    public BookEntity updateBookById(int id, BookEntity bookEntity);
 }
