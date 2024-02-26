@@ -5,6 +5,7 @@ import com.infogalaxy.librarymanagementsystemproject.entity.BookEntity;
 import com.infogalaxy.librarymanagementsystemproject.repo.IBookRepo;
 import com.infogalaxy.librarymanagementsystemproject.responses.GlobalResponses;
 import com.infogalaxy.librarymanagementsystemproject.service.IBookService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,7 @@ public class BookController {
     }
 
     @PostMapping("/createbook")
-    public ResponseEntity<?> createBook(@RequestBody BookEntity bookEntity) {
+    public ResponseEntity<?> createBook(@RequestBody @Valid BookEntity bookEntity) {
         return new ResponseEntity<>(new GlobalResponses("New Book Created Successfully", HttpStatus.CREATED, iBookService.createBook(bookEntity)), HttpStatus.CREATED);
     }
 
@@ -46,4 +47,5 @@ public class BookController {
     public ResponseEntity<?> deleteBookById(@PathVariable ("id") int id) {
         return new ResponseEntity<>(new GlobalResponses("Book Data Deleted Successfully", HttpStatus.ACCEPTED, iBookService.deleteBookById(id)), HttpStatus.ACCEPTED);
     }
+
 }

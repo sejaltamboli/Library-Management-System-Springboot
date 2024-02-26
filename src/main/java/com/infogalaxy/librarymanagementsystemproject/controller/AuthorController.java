@@ -4,6 +4,7 @@ package com.infogalaxy.librarymanagementsystemproject.controller;
 import com.infogalaxy.librarymanagementsystemproject.entity.AuthorEntity;
 import com.infogalaxy.librarymanagementsystemproject.responses.GlobalResponses;
 import com.infogalaxy.librarymanagementsystemproject.service.IAuthorService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class AuthorController {
     }
 
     @PostMapping("/createauthor")
-    public ResponseEntity<?> createAuthor(@RequestBody AuthorEntity authorEntity){
+    public ResponseEntity<?> createAuthor(@RequestBody @Valid AuthorEntity authorEntity){
         return new ResponseEntity<>(new GlobalResponses("New Author Created Successfully...", HttpStatus.CREATED,iAuthorService.createAuthor(authorEntity)), HttpStatus.CREATED);
     }
 

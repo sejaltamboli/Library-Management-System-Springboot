@@ -4,6 +4,7 @@ package com.infogalaxy.librarymanagementsystemproject.controller;
 import com.infogalaxy.librarymanagementsystemproject.entity.LibraryMemberEntity;
 import com.infogalaxy.librarymanagementsystemproject.responses.GlobalResponses;
 import com.infogalaxy.librarymanagementsystemproject.service.IMemberService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class LibraryMemberController {
     }
 
     @PostMapping("/createmember")
-    public ResponseEntity<?> createMember(@RequestBody LibraryMemberEntity libraryMemberEntity){
+    public ResponseEntity<?> createMember(@RequestBody @Valid LibraryMemberEntity libraryMemberEntity){
         return new ResponseEntity<>(new GlobalResponses("New Member Created Successfully...", HttpStatus.CREATED,iMemberService.createMember(libraryMemberEntity)), HttpStatus.CREATED);
     }
 
