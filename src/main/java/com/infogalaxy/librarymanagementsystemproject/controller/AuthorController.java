@@ -36,8 +36,8 @@ public class AuthorController {
         return new ResponseEntity<>(new GlobalResponses("Author Data Found By Id", HttpStatus.FOUND, iAuthorService.retrieveAuthorById(id)), HttpStatus.FOUND);
     }
 
-//    @PutMapping("/updateauthorbyid/{id}")
-//    public ResponseEntity<?> updateAuthorById(@PathVariable ("id") int id, @RequestBody AuthorEntity authorEntity) {
-//        return new ResponseEntity<>(new GlobalResponses("Author Data Updated Successfully", HttpStatus.ACCEPTED, iAuthorService.updateAuthorById(id, authorEntity)), HttpStatus.ACCEPTED);
-//    }
+    @PutMapping("/updateauthorbyid/{id}")
+    public ResponseEntity<?> updateAuthorById(@PathVariable ("id") int id, @RequestBody AuthorEntity authorEntity) {
+        return new ResponseEntity<>(new GlobalResponses("Author Data Updated Successfully", HttpStatus.ACCEPTED, iAuthorService.updateAuthorById(id, authorEntity)), HttpStatus.ACCEPTED);
+    }
 }
