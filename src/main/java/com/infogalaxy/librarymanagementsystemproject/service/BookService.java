@@ -21,7 +21,7 @@ public class BookService implements IBookService{
     }
 
     @Override
-    public List<BookEntity> RetrieveAllBook() {
+    public List<BookEntity> retrieveAllBook() {
         return iBookRepo.findAll();
     }
 }

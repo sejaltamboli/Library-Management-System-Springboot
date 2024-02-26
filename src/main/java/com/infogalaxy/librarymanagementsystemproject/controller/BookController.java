@@ -26,5 +26,9 @@ public class BookController {
     public ResponseEntity<?> createBook(@RequestBody BookEntity bookEntity) {
         return new ResponseEntity<>(new GlobalResponses("New Book Created Successfully", HttpStatus.CREATED, iBookService.createBook(bookEntity)), HttpStatus.CREATED);
     }
-    
+
+    @GetMapping("/retrieveallbook")
+    public ResponseEntity<?> retrieveAllBook() {
+        return new ResponseEntity<>(new GlobalResponses("All Book Data Found Successfully", HttpStatus.FOUND, iBookService.retrieveAllBook()), HttpStatus.FOUND);
+    }
 }
