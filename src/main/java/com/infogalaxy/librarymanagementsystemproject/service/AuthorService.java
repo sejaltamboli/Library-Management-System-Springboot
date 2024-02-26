@@ -38,4 +38,11 @@ public class AuthorService implements IAuthorService{
         BeanUtils.copyProperties(authorEntity,authorEntityNew);
         return iAuthorRepo.save(authorEntityNew);
     }
+
+    @Override
+    public String deleteAuthorById(int id) {
+        AuthorEntity authorEntity = iAuthorRepo.findById(id).get();
+        iAuthorRepo.deleteById(id);
+        return "Author Deleted Successfully...";
+    }
 }

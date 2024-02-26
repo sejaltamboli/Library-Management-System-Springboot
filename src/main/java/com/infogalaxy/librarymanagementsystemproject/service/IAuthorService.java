@@ -13,4 +13,6 @@ public interface IAuthorService {
     public AuthorEntity retrieveAuthorById(int id);
 
     public AuthorEntity updateAuthorById(int id, AuthorEntity authorEntity);
+
+    public String deleteAuthorById(int id);
 }
